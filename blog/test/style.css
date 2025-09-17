@@ -1,0 +1,15 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 2em;
+  background: #fefefe;
+}
+
+footer {
+  margin-top: 2em;
+  padding: 1em;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+  /* Example of per-page footer styling */
+  background: url("cat-paw.png") no-repeat center;
+}
