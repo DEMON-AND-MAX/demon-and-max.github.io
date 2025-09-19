@@ -1,0 +1,62 @@
+/* Basic reset */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
+}
+
+/* Page header */
+header {
+  background: #444;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header .subtitle {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #ddd;
+}
+
+/* Blog content */
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Sections */
+.section {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+  margin-top: 0;
+  color: #222;
+}
+
+.section img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
+
+/* Footer (when you add one later) */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9em;
+  color: #666;
+}
