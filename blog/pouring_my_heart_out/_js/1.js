@@ -1,5 +1,5 @@
 const thisScript = document.currentScript;
-const jsonPath = thisScript.getAttribute("json");
+const jsonPath = thisScript.getAttribute("data-json");
 
 fetch(jsonPath)
   .then(res => res.json())
