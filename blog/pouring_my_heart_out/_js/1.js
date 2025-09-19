@@ -17,7 +17,12 @@ fetch(jsonPath)
         div.appendChild(h2);
 
         const p = document.createElement("p");
-        p.textContent = section.text;
+        // Flatten array of arrays to a single string
+        if (Array.isArray(section.text)) {
+          p.textContent = section.text.flat().join(" ");
+        } else {
+          p.textContent = section.text;
+        }
         div.appendChild(p);
 
         // Handle images
