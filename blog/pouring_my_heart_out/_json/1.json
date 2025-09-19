@@ -1,0 +1,61 @@
+{
+  "title": "pouring my heart out .1",
+  "subtitle": "work life, being petty",
+  "about": 
+        ["in this post i talk about some of the shitty things that happened to me",
+        "at work in the last... yesterday. and how i'm being a petty bitch and", 
+        "my plan to fuck everyone over because i instantly lost my trust in my team."],
+  "written_on": {
+    "month": 9,
+    "day": 19,
+    "year": 2025
+  },
+  "sections": [
+    {
+      "type": "paragraph",
+      "heading": "ugly start",
+      "text": [
+        ["it’s saddening to start on such a bad note, but i promised myself this would be a place of honesty.",
+        "i want to pour my heart out about something that happened starting yesterday.", 
+        "thinking about how i’ll end up writing chronicles about the things that triggered me doesn’t ease me,", 
+        "but it’s what i need in times when i'm spiraling thinking about them."]
+      ],
+      "images": [
+        {
+          "src": "_img/1/test.jpg",
+          "offsetX": 50,
+          "offsetY": -20,
+          "rotateX": 0,
+          "rotateY": 0,
+          "rotateZ": 50,
+          "scale": 0.5,
+          "opacity": 1,
+          "keyColor": "#3b3b3b",
+          "keyStrength": 0.7,
+          "filter": "brightness(1) blur(0px) invert(100) sepia(1) hue-rotate(100deg) saturate(2)" 
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "heading": "a little history",
+      "text": [
+        [""]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "heading": "so what happened?",
+      "text": [
+        []
+      ]
+    },
+    {
+      "type": "paragraph_small",
+      "heading": "the sight of Am smoking",
+      "text": [
+        []
+      ]
+    }
+  ]
+}
