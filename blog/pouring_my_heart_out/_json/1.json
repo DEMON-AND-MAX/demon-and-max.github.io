@@ -10,6 +10,11 @@
     "day": 19,
     "year": 2025
   },
+  "published_on": {
+    "month": 9,
+    "day": 25,
+    "year": 2025
+  },
   "sections": [
     {
       "type": "paragraph",
@@ -40,18 +45,36 @@
       "type": "paragraph",
       "heading": "a little history",
       "text": [
-        [""]
+        ["i feel it’s first important to give a little history about myself and my work life:", 
+        "i’m not allowed to talk in detail about what specifically i am working on, that is something i signed a contract for,",
+        "but i am allowed to give unrelated parallels."],
+        ["the least context that i can give is that i work for a big cybersecurity company,",
+        "i was taken as an ml engineer to work on a very important (and difficult) antivirus.",
+        "it is a baby project, it only has a few months, and we are a team of four people, three of us being freshly out of university.",
+        "if you don’t know, ml stands for ‘machine learning’ which is a branch of statistics and programming that makes predictive mathematical models used to forecast verdicts based on a set of information.",
+        "what i’m explaining to you is that i make artifical intelligence, it is the main branch of programming that i work on,",
+        "and no, it is not the same thing as using chatgpt to make a stupid chatbot: our model is light in resources and serves to protect people, corporations and other bodies from malware and data loss."],
+        ["i started work three months ago, and have a team consisting of my boss, a cpp dev, another ml dev and me---i will refer to them by their roles."]
       ]
     },
     {
       "type": "paragraph",
       "heading": "so what happened?",
       "text": [
+        ["it all started on a thursday. up until that day, i was tasked with some very important and extremely difficult things to implement in our engine, things that included converting python code to cpp and learning about multithreading.",
+        "our entire team was sort of basing itself on these tasks, and i delivered them wonderfully (in retrospect).",
+        "i was consistently met with questioning about whether everything i did actually worked fully, if i verified certain edge cases, etc.",
+        "which i had checked and made sure were fool-proof. it’s expected that you’d be asked to check everything, since this was very important, but even up to today, everything i did worked exactly as expected.",
+        "note that i didn’t personally get any bravos, from my boss or team, for what i worked (not that i expected or needed any)."],
+        ["come forward i was given another cpp task, a very important one.",
+        "now, notice how i’m mentioning these as… cpp tasks. i was working out of my expertise all this time, essentially taking one for the team,",
+        "and i let the ml guy take… the next big ml part of the project, out of the goodness of my heart.",
+        "i worked around two days on this task, and was having issues with memory leaks due to the things i was doing---it was done, but testing was difficult as i didn’t know what caused the leaks."],
         []
       ]
     },
     {
-      "type": "paragraph_small",
+      "type": "small_paragraph",
       "heading": "the sight of Am smoking",
       "text": [
         []
