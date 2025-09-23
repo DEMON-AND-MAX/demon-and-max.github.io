@@ -5,15 +5,20 @@
         ["in this post i talk about some of the shitty things that happened to me",
         "at work in the last... yesterday. and how i'm being a petty bitch and", 
         "my plan to fuck everyone over because i instantly lost my trust in my team."],
-  "written_on": {
-    "month": 9,
-    "day": 19,
-    "year": 2025
-  },
-  "published_on": {
-    "month": 9,
-    "day": 25,
-    "year": 2025
+  "metadata": {
+    "is_released": false,
+    "is_unlisted": false,
+    "is_hidden": false,
+    "written_on": {
+      "month": 9,
+      "day": 19,
+      "year": 2025
+    },
+    "published_on": {
+      "month": 9,
+      "day": 25,
+      "year": 2025
+    }
   },
   "sections": [
     {
@@ -78,6 +83,38 @@
       "heading": "the sight of Am smoking",
       "text": [
         []
+      ]
+    },
+    {
+      "type": "paragraph",
+      "heading": "a good feeling, the addendum",
+      "text": [
+        ["after hanging out with my girls, i sit down in my bed and realize that maybe what i was missing wasn’t revenge,",
+        "but rather love and affection from people willing to listen and be there for me.",
+        "maybe staying around people who physically recoil when i touch them has made me feel cold to my own touch, or made me feel like intimacy is not something that friends share with each other.",
+        "the real reason my friendships felt so empty was… well the culmination of those things."],
+        ["when blinded by the sight of what i hated, a simple hug is all it took to hold me back, it melted my cold heart,",
+        "and perhaps all i am doing now is laying my weapons on the table:",
+        "who is to touch me but an empty man that wants my body, a man who can’t speak my tongue, a friend who can’t be there for me, or a distant boss that has his mind filled with worries?"],
+        ["there really is nobody, and a similar thought dawned on me before writing this post.",
+        "i truly have no chest to lay my head and cry on, no matter whose shoulder i was and how much i burdened myself for others,",
+        "it was never worth the effort, i became a charity and forgot about my own needs in the meantime. i guess all i want to say is… a hug once or twice from time to time, from anyone, would maybe change my world."],
+        ["or maybe what i truly want to say is: i wish people would stop fearing touching me, i lack affection, and the ones who give it to me don’t give it out of love, but carnal desire.",
+        "and lust will never satiate me, it leaves me empty no matter how many times i seek its comfort… same as revenge, envy, hatred… nothing can replace the warmth of a loving embrace, nothing.",
+        "nothing can make me feel the way someone hugging me, saying ‘cry in my arms, i’m here to listen, because i love you’ can."]
+      ]
+    },
+    {
+      "type": "small_paragraph",
+      "heading": "bittersweet conclusion",
+      "text": [
+        ["it's not hard to get what i want, but will it make me feel whole?",
+          "a deep feeling stays rooted in me, that of emptiness, and a desire to fill the void comes along with it.",
+          "maybe the true answer is the one that i decide to look for, but when will my search end? how can i know that i've found it? it's easy to deceive yourself in midst of proving that you're right."
+        ],
+        ["funny how writing this in the last three-four days, i can read back this post and see multiple people wrote each paragraph---",
+        "one mad at the unfairness of life, one set on getting his revenge, and one full of hope for himself, regardless of the hurdles he’s been thrown at."],
+        ["thanks for taking the time to indulge in my thoughts and emotion, but don't let them convince you that this post describes everything that i am, i am much more than my rage. have a good one, love."]
       ]
     }
   ]
