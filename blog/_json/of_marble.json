@@ -1,0 +1,128 @@
+{
+  "title": "pouring my heart out .1",
+  "subtitle": "work life, being petty",
+  "about": 
+        ["in this post i talk about some of the shitty things that happened to me",
+        "at work in the last... yesterday. and how i'm being a petty bitch and", 
+        "my plan to fuck everyone over because i instantly lost my trust in my team."],
+  "metadata": {
+    "is_released": false,
+    "is_unlisted": false,
+    "is_hidden": false,
+    "written_on": {
+      "month": 9,
+      "day": 19,
+      "year": 2025
+    },
+    "published_on": {
+      "month": 9,
+      "day": 25,
+      "year": 2025
+    }
+  },
+  "sections": [
+    {
+      "type": "paragraph",
+      "heading": "the bag of marbles",
+      "text": [
+        ["take a bag of mixed marbles, pick them up and roll them around your hand - you see all sorts of wonderful colors kept within like a glassy cage.",
+        "so, what's to stop me from having my own bag of little marbles?",
+        "i'll roll them the same, and enjoy their beauty from afar,since even the cage has its purpose: keeping the colors in place!",
+        "the purpose of this site is to be like my little glass jar, here i'll talk about my emotions, thoughts, creations and more.",
+        "a place of solace, where i'm not judged for my feelings and thoughts, and i can just be myself.",
+        "a first confession",
+        "often times i feel like, even with my closest friends, i cannot truly be sincere in a genuine way.",
+        "my sincerity often comes two-sided, one of truth and one that hides my feelings---maybe out of guilt, or shame.",
+        "the sad realization that dawned on me a little bit before i started this blog was that i had so many people around me, but none could lend a ear to hear my issues and maybe that was a thing of my own making, but it's still not ok, nor something i want to keep growing.",
+        "the harsh decision that some friendships need to go, and that i need to be more honest with myself and the people around me, led to me having a major change in heart about myself",
+        "and i promised myself id stop being someone else, as much as safety wouldn't be a concern obviously, this is public, and maybe it's a way of absolving what's passing through my mind and saying it out loud."]
+      ],
+      "images": [
+        {
+          "src": "_img/1/test.jpg",
+          "offsetX": 50,
+          "offsetY": -20,
+          "rotateX": 0,
+          "rotateY": 0,
+          "rotateZ": 50,
+          "scale": 0.5,
+          "opacity": 1,
+          "keyColor": "#3b3b3b",
+          "keyStrength": 0.7,
+          "filter": "brightness(1) blur(0px) invert(100) sepia(1) hue-rotate(100deg) saturate(2)" 
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "heading": "a little history",
+      "text": [
+        ["i feel it’s first important to give a little history about myself and my work life:", 
+        "i’m not allowed to talk in detail about what specifically i am working on, that is something i signed a contract for,",
+        "but i am allowed to give unrelated parallels."],
+        ["the least context that i can give is that i work for a big cybersecurity company,",
+        "i was taken as an ml engineer to work on a very important (and difficult) antivirus.",
+        "it is a baby project, it only has a few months, and we are a team of four people, three of us being freshly out of university.",
+        "if you don’t know, ml stands for ‘machine learning’ which is a branch of statistics and programming that makes predictive mathematical models used to forecast verdicts based on a set of information.",
+        "what i’m explaining to you is that i make artifical intelligence, it is the main branch of programming that i work on,",
+        "and no, it is not the same thing as using chatgpt to make a stupid chatbot: our model is light in resources and serves to protect people, corporations and other bodies from malware and data loss."],
+        ["i started work three months ago, and have a team consisting of my boss, a cpp dev, another ml dev and me---i will refer to them by their roles."]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "heading": "so what happened?",
+      "text": [
+        ["it all started on a thursday. up until that day, i was tasked with some very important and extremely difficult things to implement in our engine, things that included converting python code to cpp and learning about multithreading.",
+        "our entire team was sort of basing itself on these tasks, and i delivered them wonderfully (in retrospect).",
+        "i was consistently met with questioning about whether everything i did actually worked fully, if i verified certain edge cases, etc.",
+        "which i had checked and made sure were fool-proof. it’s expected that you’d be asked to check everything, since this was very important, but even up to today, everything i did worked exactly as expected.",
+        "note that i didn’t personally get any bravos, from my boss or team, for what i worked (not that i expected or needed any)."],
+        ["come forward i was given another cpp task, a very important one.",
+        "now, notice how i’m mentioning these as… cpp tasks. i was working out of my expertise all this time, essentially taking one for the team,",
+        "and i let the ml guy take… the next big ml part of the project, out of the goodness of my heart.",
+        "i worked around two days on this task, and was having issues with memory leaks due to the things i was doing---it was done, but testing was difficult as i didn’t know what caused the leaks."],
+        []
+      ]
+    },
+    {
+      "type": "small_paragraph",
+      "heading": "the sight of Am smoking",
+      "text": [
+        []
+      ]
+    },
+    {
+      "type": "paragraph",
+      "heading": "a good feeling, the addendum",
+      "text": [
+        ["after hanging out with my girls, i sit down in my bed and realize that maybe what i was missing wasn’t revenge,",
+        "but rather love and affection from people willing to listen and be there for me.",
+        "maybe staying around people who physically recoil when i touch them has made me feel cold to my own touch, or made me feel like intimacy is not something that friends share with each other.",
+        "the real reason my friendships felt so empty was… well the culmination of those things."],
+        ["when blinded by the sight of what i hated, a simple hug is all it took to hold me back, it melted my cold heart,",
+        "and perhaps all i am doing now is laying my weapons on the table:",
+        "who is to touch me but an empty man that wants my body, a man who can’t speak my tongue, a friend who can’t be there for me, or a distant boss that has his mind filled with worries?"],
+        ["there really is nobody, and a similar thought dawned on me before writing this post.",
+        "i truly have no chest to lay my head and cry on, no matter whose shoulder i was and how much i burdened myself for others,",
+        "it was never worth the effort, i became a charity and forgot about my own needs in the meantime. i guess all i want to say is… a hug once or twice from time to time, from anyone, would maybe change my world."],
+        ["or maybe what i truly want to say is: i wish people would stop fearing touching me, i lack affection, and the ones who give it to me don’t give it out of love, but carnal desire.",
+        "and lust will never satiate me, it leaves me empty no matter how many times i seek its comfort… same as revenge, envy, hatred… nothing can replace the warmth of a loving embrace, nothing.",
+        "nothing can make me feel the way someone hugging me, saying ‘cry in my arms, i’m here to listen, because i love you’ can."]
+      ]
+    },
+    {
+      "type": "small_paragraph",
+      "heading": "bittersweet conclusion",
+      "text": [
+        ["it's not hard to get what i want, but will it make me feel whole?",
+          "a deep feeling stays rooted in me, that of emptiness, and a desire to fill the void comes along with it.",
+          "maybe the true answer is the one that i decide to look for, but when will my search end? how can i know that i've found it? it's easy to deceive yourself in midst of proving that you're right."
+        ],
+        ["funny how writing this in the last three-four days, i can read back this post and see multiple people wrote each paragraph---",
+        "one mad at the unfairness of life, one set on getting his revenge, and one full of hope for himself, regardless of the hurdles he’s been thrown at."],
+        ["thanks for taking the time to indulge in my thoughts and emotion, but don't let them convince you that this post describes everything that i am, i am much more than my rage. have a good one, love."]
+      ]
+    }
+  ]
+}

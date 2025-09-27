@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog Post</title>
+  <title>Blog Page</title>
   <link rel="stylesheet" href="./_css/of_marble.css">
 </head>
 <body>
-  <header>
-    <h1 id="post-title"></h1>
-    <p id="post-subtitle" class="subtitle"></p>
-  </header>
+  <!-- First blog container -->
+  <section id="blog1">
+    <header>
+      <h1 class="post-title"></h1>
+      <p class="post-subtitle subtitle"></p>
+    </header>
+    <main class="post-content"></main>
+  </section>
 
-  <main id="post-content">
-    <!-- Sections will be inserted here -->
-  </main>
-
-  <!-- Footer placeholder -->
-  <!-- <div id="footer"></div> -->
-  <!-- <script src="/footer.js"></script> -->
-  <script src="./_js/of_marble.js" data-json="./_json/of_marble.json"></script>
+  <!-- Attach interpreters -->
+  <script src="../_js/interpreter/blink.js" data-json="./_json/of_marble.json" data-container="#blog1"></script>
 </body>
 </html>
