@@ -34,12 +34,12 @@
       "position": "absolute",
       "zIndex": 1,
       "text": [
-        "./_txt/of_marble/1.txt",
-        "./_txt/of_marble/3.docx"
+        "./_data/txt/of_marble/1.txt",
+        "./_data/txt/of_marble/3.docx"
       ],
       "images": [
         {
-          "src": "./pouring_my_heart_out/_img/1/test.jpg",
+          "src": "./_data/img/pouring_my_heart_out/1/test.jpg",
           "offsetX": 50,
           "offsetY": -20,
           "rotateX": 0,
