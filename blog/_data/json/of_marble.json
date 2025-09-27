@@ -30,7 +30,7 @@
       "offsetY": 400,
       "rotateX": 0,
       "rotateY": 0,
-      "className": "fancy-text",
+      "className": "text",
       "position": "absolute",
       "zIndex": 1,
       "text": [
