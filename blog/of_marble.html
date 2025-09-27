@@ -2,20 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Blog Page</title>
-  <link rel="stylesheet" href="./_css/of_marble.css">
+  <title>of marble</title>
 </head>
 <body>
   <!-- First blog container -->
-  <section id="blog1">
-    <header>
-      <h1 class="post-title"></h1>
-      <p class="post-subtitle subtitle"></p>
-    </header>
-    <main class="post-content"></main>
-  </section>
+  <section id="blog1"> </section>
+  <section id="blog2"> </section>
 
   <!-- Attach interpreters -->
-  <script src="../_js/interpreter/blink.js" data-json="./_json/of_marble.json" data-container="#blog1"></script>
+   <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+  <script type="module">
+    import blink from "./_data/js/interpreter/blink.js";
+    blink({
+      jsonPath: "./_data/json/of_marble.json",
+      cssPath: "./_data/css/of_marble.css",
+      containerSelector: "#blog1"
+    });
+  </script>
+  <script type="module">
+    import blink from "./_data/js/interpreter/blink.js";
+    blink({
+      jsonPath: "./_data/json/of_marble.json",
+      cssPath: "./_data/css/pouring_my_heart_out/1.css",
+      containerSelector: "#blog2"
+    });
+  </script>
 </body>
 </html>
