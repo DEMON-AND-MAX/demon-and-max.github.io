@@ -10,7 +10,7 @@ export function renderParagraphSection(section) {
   }
   const opts = section.position || {};
   setBoxStyles(div, opts);
-  div.appendChild(createParagraphs(section.text));
+  div.appendChild(createParagraphs(section.text, section.id, section.className));
   if (opts.zIndex) div.style.zIndex = opts.zIndex;
   if (Array.isArray(section.images)) {
     section.images.forEach(imgData => div.appendChild(createImage(imgData)));
@@ -41,9 +41,25 @@ function setBoxStyles(el, opts) {
   }
 }
 
-function createParagraphs(textArr) {
+function extractSection(text, sectionId) {
+  const lines = text.split(/\r?\n/);
+  let collecting = false;
+  let collected = [];
+  for (let line of lines) {
+    const match = line.match(/^\[section ([^\]]+)\]$/);
+    if (match) {
+      if (collecting) break;
+      collecting = match[1] === sectionId;
+      continue;
+    }
+    if (collecting && !/^\[section ([^\]]+)\]$/.test(line)) collected.push(line);
+  }
+  return collected;
+}
+
+function createParagraphs(textArr, sectionId, className) {
   const container = document.createElement("div");
-  container.className = "paragraphs";
+  container.className = className ? className : "paragraph";
   if (!Array.isArray(textArr)) return container;
   textArr.forEach(path => {
     const p = document.createElement("p");
@@ -53,7 +69,10 @@ function createParagraphs(textArr) {
         .then(buffer => {
           if (window.mammoth) {
             window.mammoth.convertToHtml({ arrayBuffer: buffer })
-              .then(result => { p.innerHTML = result.value || "[No text found]"; })
+              .then(result => {
+                const collected = extractSection(result.value, sectionId);
+                p.innerHTML = collected.length ? collected.join("<br>") : "[No matching section found]";
+              })
               .catch(() => { p.textContent = "[Failed to parse DOCX]"; });
           } else {
             p.textContent = "[mammoth.js not loaded]";
@@ -63,7 +82,10 @@ function createParagraphs(textArr) {
     } else if (typeof path === "string") {
       fetch(path)
         .then(res => res.ok ? res.text() : Promise.reject(res.statusText))
-        .then(txt => { p.textContent = txt; })
+        .then(txt => {
+          const collected = extractSection(txt, sectionId);
+          p.innerHTML = collected.length ? collected.join("<br>") : "[No matching section found]";
+        })
         .catch(() => { p.textContent = "[Failed to load paragraph]"; });
     } else {
       p.textContent = "[Invalid paragraph path]";
@@ -77,7 +99,7 @@ function createImage(imgData) {
   const img = document.createElement("img");
   img.src = imgData.src;
   img.className = imgData.className || "overlay";
-  img.style.position = "absolute";
+  img.style.position = imgData.position || "absolute";
   img.style.left = (imgData.offsetX ?? 0) + "px";
   img.style.top = (imgData.offsetY ?? 0) + "px";
   img.style.zIndex = imgData.zIndex || 0;

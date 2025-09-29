@@ -23,16 +23,20 @@
   "sections": [
     {
       "type": "paragraph",
+      "id": "marbles",
       "heading": "the bag of marbles",
-      "width": 700,
-      "height": 500,
-      "offsetX": 400,
-      "offsetY": 400,
-      "rotateX": 0,
-      "rotateY": 0,
+      "position": {
+        "width": 0,
+        "height": 0,
+        "offsetX": "100px",
+        "offsetY": 100,
+        "rotateX": 80,
+        "rotateY": 0,
+        "rotateZ": 100,
+        "position": "absolute",
+        "zIndex": 1
+      },
       "className": "text",
-      "position": "absolute",
-      "zIndex": 1,
       "text": [
         "./_data/txt/of_marble/1.txt",
         "./_data/txt/of_marble/3.docx"
@@ -40,16 +44,18 @@
       "images": [
         {
           "src": "./_data/img/pouring_my_heart_out/1/test.jpg",
-          "offsetX": 50,
-          "offsetY": -20,
+          "offsetX": 0,
+          "offsetY": 0,
           "rotateX": 0,
           "rotateY": 0,
-          "rotateZ": 50,
-          "scale": 0.5,
+          "rotateZ": 0,
+          "scale": 10,
           "opacity": 1,
           "zIndex": 0,
           "keyColor": "#3b3b3b",
           "keyStrength": 0.7,
+          "className": "overlay",
+          "position": "absolute",
           "filter": "brightness(1) blur(0px) invert(100) sepia(1) hue-rotate(100deg) saturate(2)" 
         }
       ]

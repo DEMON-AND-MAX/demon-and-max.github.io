@@ -1,9 +1,11 @@
+[section marbles]
 "take a bag of mixed marbles, pick them up and roll them around your hand - you see all sorts of wonderful colors kept within like a glassy cage.",
 "so, what's to stop me from having my own bag of little marbles?",
 "i'll roll them the same, and enjoy their beauty from afar,since even the cage has its purpose: keeping the colors in place!",
 "the purpose of this site is to be like my little glass jar, here i'll talk about my emotions, thoughts, creations and more.",
 "a place of solace, where i'm not judged for my feelings and thoughts, and i can just be myself.",
 "a first confession",
+[section barbles]
 "often times i feel like, even with my closest friends, i cannot truly be sincere in a genuine way.",
 "my sincerity often comes two-sided, one of truth and one that hides my feelings---maybe out of guilt, or shame.",
 "the sad realization that dawned on me a little bit before i started this blog was that i had so many people around me, but none could lend a ear to hear my issues and maybe that was a thing of my own making, but it's still not ok, nor something i want to keep growing.",
