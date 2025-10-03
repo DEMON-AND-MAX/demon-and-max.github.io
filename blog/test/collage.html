@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Collage</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      background: #fafafa;
+      position: relative;
+    }
+    .collage-image {
+      position: absolute;
+      transform-origin: center;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  async function loadImages() {
+    const res = await fetch("images.json");
+    const files = await res.json();
+
+    const amount = 800; // how many images to place
+    for (let i = 0; i < amount; i++) {
+      const img = document.createElement("img");
+      img.src = files[Math.floor(Math.random() * files.length)];
+      img.className = "collage-image";
+
+      // Random scale
+      const scale = 1 + Math.random() * 0.5;
+      img.style.width = `${200 * scale}px`;
+
+      // Random position
+      img.style.left = `${Math.random() * window.innerWidth * 1.5}px`;
+      img.style.top = `${Math.random() * window.innerHeight * 1.5}px`;
+
+      // Random rotation
+      const rotation = (Math.random() * 60) - 30;
+
+      // Random horizontal flip (50% chance)
+      const flip = Math.random() < 0.5 ? -1 : 1;
+
+      // Apply transform
+      img.style.transform = `rotate(${rotation}deg) scale(${flip * scale}, ${scale})`;
+
+      document.body.appendChild(img);
+    }
+  }
+  loadImages();
+</script>
+
+</body>
+</html>
