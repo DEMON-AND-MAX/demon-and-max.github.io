@@ -23,9 +23,13 @@
   "sections": [
     {
       "type": "paragraph",
-      "id": "marbles",
-      "heading": "the bag of marbles",
-      "position": {
+      "metadata": {
+        "id": "marbles",
+        "title": "marbles",
+        "heading": "the bag of marbles",
+        "style": "text"
+      },
+      "transform": {
         "width": 0,
         "height": 0,
         "offsetX": "100px",
@@ -36,7 +40,6 @@
         "position": "absolute",
         "zIndex": 1
       },
-      "className": "text",
       "text": [
         "./_data/txt/of_marble/1.txt",
         "./_data/txt/of_marble/3.docx"

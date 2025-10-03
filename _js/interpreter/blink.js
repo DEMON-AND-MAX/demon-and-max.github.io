@@ -1,9 +1,9 @@
-
 import { renderParagraphSection } from "../object/light.js";
+import { parseData } from "parser.js";
 
-export default function blink({ jsonPath, cssPath, containerSelector }) {
+export default function interpret({ jsonPath, cssPath, containerSelector }) {
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => blink({ jsonPath, cssPath, containerSelector }));
+    document.addEventListener("DOMContentLoaded", () => interpret({ jsonPath, cssPath, containerSelector }));
     return;
   }
 
@@ -45,7 +45,8 @@ export default function blink({ jsonPath, cssPath, containerSelector }) {
       if (!Array.isArray(data.sections)) return;
       data.sections.forEach(section => {
         let div = null;
-        if (section.type === "paragraph") div = renderParagraphSection(section);
+        let parsedData = parseData(section);
+        if (section.type === "paragraph") div = renderParagraphSection(parsedData);
         else console.warn("Interpreter: unknown section type:", section.type);
         if (div) contentEl.appendChild(div);
       });
