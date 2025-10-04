@@ -1,19 +1,43 @@
 /**
+ * Utility to load data objects from a given path
+ */
+export async function loadData(dataPath) {
+  const res = await fetch(dataPath);
+  if (!res.ok) throw new Error("<blinkUtil> data fetch failed: " + res.status);
+  const info = getInfo(res.json());
+  const data = getSections(res.json());
+  return { info, data };
+}
+
+function getInfo(data) {
+  if (!data.info) throw new Error("<blinkUtil> data missing info.");
+  return data.info;
+}
+
+function getSections(data) {
+  if (!data.sections) throw new Error("<blinkUtil> data missing sections.");
+  if (!Array.isArray(data.sections)) {
+    throw new Error("<blinkUtil> sections is not an array.");
+  }
+  return data.section;
+}
+
+/**
  * Utility to create and attach a Shadow DOM with optional CSS
  */
-export async function createShadowWithCSS(container, cssPath) {
+export async function createShadow(container, cssPath) {
   const shadow = container.attachShadow({ mode: "open" });
 
   if (cssPath) {
     try {
       const res = await fetch(cssPath);
-      if (!res.ok) throw new Error("CSS fetch failed: " + res.status);
+      if (!res.ok) throw new Error("<blinkUtil> CSS fetch failed: " + res.status);
       const cssText = await res.text();
       const style = document.createElement("style");
       style.textContent = cssText;
       shadow.appendChild(style);
     } catch (err) {
-      console.error("Interpreter: failed loading CSS:", cssPath, err);
+      console.error("<blinkUtil> failed loading CSS:", cssPath, err);
     }
   }
 
@@ -21,18 +45,25 @@ export async function createShadowWithCSS(container, cssPath) {
 }
 
 /**
- * Utility to create default structure for title/subtitle/content
+ * Utility to create default structure for content
  */
-export function createBaseLayout(shadow) {
-  const titleEl = document.createElement("div");
-  titleEl.className = "post-title";
-
-  const subtitleEl = document.createElement("div");
-  subtitleEl.className = "post-subtitle";
-
+export function createLayout(shadow) {
   const contentEl = document.createElement("div");
-  contentEl.className = "post-content";
+  contentEl.className = "page content";
 
-  shadow.append(titleEl, subtitleEl, contentEl);
-  return { titleEl, subtitleEl, contentEl };
+  shadow.append(contentEl);
+  return { contentEl };
+}
+
+/**
+ * Utility to get renderer function for a specific section type
+ */
+export async function getRenderer(type, basePath = "section") {
+  const module = await import(`../${basePath}/${type}.js`);
+  
+  if (typeof module.default !== "function") {
+    throw new Error(`<blink> renderer for type "${type}" is not a function.`);
+  }
+
+  return module.default;
 }

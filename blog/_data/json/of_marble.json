@@ -25,9 +25,7 @@
       "type": "paragraph",
       "metadata": {
         "id": "marbles",
-        "title": "marbles",
-        "heading": "the bag of marbles",
-        "style": "text"
+        "style": ""
       },
       "transform": {
         "width": null,

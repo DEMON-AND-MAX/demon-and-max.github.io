@@ -7,8 +7,10 @@ import { loadFiles } from "./util/textUtil.js";
 export function parse(data) {
   const parsed = {};
 
-  parsed.type = data?.type ?? "paragraph";
-  parsed.metadata = parseMetadata(data.metadata);
+  if (!data.type) throw new Error("<parse> missing section type.");
+  parsed.type = data.type;
+
+  parsed.metadata = parseMetadata(data.metadata, parsed.type);
   parsed.transform = parseTransform(data.transform);
   parsed.text = parseText(data.text);
   parsed.images = parseImages(data.image);
@@ -16,30 +18,26 @@ export function parse(data) {
   return parsed;
 }
 
-function parseMetadata(data) {
-  if (!data) return {};
+function parseMetadata(data, type) {
+  if (!data) throw new Error("<parse> missing metadata.");
   return {
     id: get(data, "id"),
-    title: get(data, "title"),
-    heading: get(data, "heading"),
-    style: get(data, "style")
+    style: type + " " + get(data, "style")
   };
 }
 
-function parseTransform(data = {}) {
+function parseTransform(data) {
   const transform = {};
 
-  // Helper to apply units only to numbers, leave strings as-is
+  // helper to apply units only to numbers, leave strings as-is
   function applyUnit(val, unit) {
     if (typeof val === "number") return `${val}${unit}`;
     return val;
   }
 
-  // Vector fields (with shorthand + overrides)
-  // offset: rem, rotate: deg, scale: no unit
   const offset = extractVector(data, "offset", ["X", "Y"], [0, 0]);
   for (const k of Object.keys(offset)) {
-    offset[k] = applyUnit(offset[k], "rem");
+    offset[k] = applyUnit(offset[k], "px");
   }
   Object.assign(transform, offset);
 
@@ -50,16 +48,13 @@ function parseTransform(data = {}) {
   Object.assign(transform, rotate);
 
   const scale = extractVector(data, "scale", ["X", "Y"], [1, 1]);
-  // scale is unitless, but preserve string if present
   Object.assign(transform, scale);
 
-  // Size (width/height: rem)
   const width = get(data, "width", 0);
-  transform.width = typeof width === "number" ? `${width}rem` : width;
+  transform.width = applyUnit(width, "px");
   const height = get(data, "height", 0);
-  transform.height = typeof height === "number" ? `${height}rem` : height;
+  transform.height = applyUnit(height, "px");
 
-  // Positioning
   transform.position = get(data, "position", "static");
   transform.zIndex = get(data, "zIndex", 0);
 
