@@ -5,7 +5,7 @@
         ["in this post i talk about some of the shitty things that happened to me",
         "at work in the last... yesterday. and how i'm being a petty bitch and", 
         "my plan to fuck everyone over because i instantly lost my trust in my team."],
-  "metadata": {
+  "info": {
     "is_released": false,
     "is_unlisted": false,
     "is_hidden": false,
@@ -30,38 +30,34 @@
         "style": "text"
       },
       "transform": {
-        "width": 0,
-        "height": 0,
-        "offsetX": "100px",
-        "offsetY": 100,
-        "rotateX": 80,
+        "width": null,
+        "height": null,
+        "offsetX": 0,
+        "offsetY": 0,
+        "rotateX": 0,
         "rotateY": 0,
-        "rotateZ": 100,
-        "position": "absolute",
+        "rotateZ": 0,
+        "position": "static",
         "zIndex": 1
       },
-      "text": [
-        "./_data/txt/of_marble/1.txt",
-        "./_data/txt/of_marble/3.docx"
-      ],
-      "images": [
+      "text": {
+        "./_data/txt/of_marble/1.txt": ["barbles"]
+      },
+      "image": {
+        "./_data/img/pouring_my_heart_out/1/test.jpg": 
         {
-          "src": "./_data/img/pouring_my_heart_out/1/test.jpg",
-          "offsetX": 0,
-          "offsetY": 0,
-          "rotateX": 0,
-          "rotateY": 0,
-          "rotateZ": 0,
-          "scale": 10,
+          "offset": [50, 10],
+          "rotate": [100, 0, 0],
+          "scale": [0.1, 0.1], 
           "opacity": 1,
           "zIndex": 0,
           "keyColor": "#3b3b3b",
           "keyStrength": 0.7,
-          "className": "overlay",
+          "style": "overlay",
           "position": "absolute",
           "filter": "brightness(1) blur(0px) invert(100) sepia(1) hue-rotate(100deg) saturate(2)" 
         }
-      ]
+      }
     },
     {
       "type": "paragraph",

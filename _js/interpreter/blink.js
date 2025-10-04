@@ -1,55 +1,63 @@
-import { renderParagraphSection } from "../object/light.js";
-import { parseData } from "parser.js";
+import { createShadowWithCSS, createBaseLayout } from "./util/blinkUtil.js";
+import { parse } from "./parse.js";
 
-export default function interpret({ jsonPath, cssPath, containerSelector }) {
+/**
+ * Render JSON-driven content into container
+ */
+export default async function interpret({ jsonPath, cssPath, containerSelector }) {
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => interpret({ jsonPath, cssPath, containerSelector }));
+    document.addEventListener("DOMContentLoaded", () =>
+      interpret({ jsonPath, cssPath, containerSelector })
+    );
     return;
   }
 
   const container = document.querySelector(containerSelector);
   if (!container) {
-    console.error("Interpreter: container not found for selector:", containerSelector);
-    return;
+    throw new Error("<blink> container not found:", containerSelector);
   }
 
-  const shadow = container.attachShadow({ mode: "open" });
+  const shadow = await createShadowWithCSS(container, cssPath);
+  const { titleEl, subtitleEl, contentEl } = createBaseLayout(shadow);
 
-  if (cssPath) {
-    fetch(cssPath)
-      .then(res => res.ok ? res.text() : Promise.reject("CSS fetch error: " + res.status))
-      .then(cssText => {
-        const style = document.createElement("style");
-        style.textContent = cssText;
-        shadow.appendChild(style);
-      })
-      .catch(err => console.error("Interpreter failed loading CSS:", cssPath, err));
+  try {
+    const res = await fetch(jsonPath);
+    if (!res.ok) throw new Error("<blink> JSON fetch failed: " + res.status);
+    const data = await res.json();
+
+    if (data.title) titleEl.textContent = data.title;
+    if (data.subtitle) subtitleEl.textContent = data.subtitle;
+
+    if (!Array.isArray(data.sections)) {
+      throw new Error("<blink> sections is not an array.");
+    }
+
+    // render sections
+    for (const section of data.sections) {
+      const sectionBase = "./section"
+      const type = section.type;
+      let renderer = null;
+
+      try {
+        const module = await import(`${sectionBase}/${type}.js`);
+        renderer = module.default;
+      } catch (err) {
+        console.warn(`<blink> failed to load renderer for type "${type}":`, err);
+        continue;
+      }
+
+      if (typeof renderer !== "function") {
+        console.warn(`<blink> renderer for type "${type}" is not a function.`);
+        continue;
+      }
+
+      const parsedData = parse(section);
+      console.log(parsedData);
+      const el = await renderer(parsedData, section);
+      console.log(el);
+      if (el) contentEl.appendChild(el);
+    }
+  } catch (err) {
+    console.error("<blink> failed loading JSON:", jsonPath, err);
   }
-
-  const [titleEl, subtitleEl, contentEl] = [
-    "post-title",
-    "post-subtitle",
-    "post-content"
-  ].map(cls => {
-    const el = document.createElement("div");
-    el.className = cls;
-    shadow.appendChild(el);
-    return el;
-  });
-
-  fetch(jsonPath)
-    .then(res => res.ok ? res.json() : Promise.reject("JSON fetch error: " + res.status))
-    .then(data => {
-      if (data.title) titleEl.textContent = data.title;
-      if (data.subtitle) subtitleEl.textContent = data.subtitle;
-      if (!Array.isArray(data.sections)) return;
-      data.sections.forEach(section => {
-        let div = null;
-        let parsedData = parseData(section);
-        if (section.type === "paragraph") div = renderParagraphSection(parsedData);
-        else console.warn("Interpreter: unknown section type:", section.type);
-        if (div) contentEl.appendChild(div);
-      });
-    })
-    .catch(err => console.error("Interpreter failed loading JSON:", jsonPath, err));
 }
